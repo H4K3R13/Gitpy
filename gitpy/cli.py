@@ -1,5 +1,7 @@
 import argparse
+import os 
 
+from . import data
 def main():
     args = parse_args()
     args.func(args)
@@ -16,4 +18,5 @@ def parse_args():
     return parser.parse_args()
 
 def init(args):
-    print("Hello World")
+    data.init()
+    print(f"Initialized empty gitpy repository in {os.getcwd()}/{data.GIT_DIR}")
